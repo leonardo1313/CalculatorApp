@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/2022Projects/CalculatorApp/app/src/main/res/drawable/backspace_button_background.xml" value="0.2385" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/2022Projects/CalculatorApp/app/src/main/res/drawable/button_background.xml" value="0.2385" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/2022Projects/CalculatorApp/app/src/main/res/drawable/clear_button_background.xml" value="0.2385" />
+        <entry key="..\:/Users/Korisnik/AndroidStudioProjects/2022Projects/CalculatorApp/app/src/main/res/drawable/equals_button_background.xml" value="0.2385" />
         <entry key="..\:/Users/Korisnik/AndroidStudioProjects/2022Projects/CalculatorApp/app/src/main/res/layout/activity_main.xml" value="0.22554347826086957" />
       </map>
     </option>

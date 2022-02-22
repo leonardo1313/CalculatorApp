@@ -14,7 +14,7 @@
 
     <string name="clear_btn">C</string>
     <string name="exponent_btn">^</string>
-    <string name="parentheses_btn">()</string>
+    <string name="parentheses_btn">( )</string>
     <string name="divide_btn">÷</string>
     <string name="multiply_btn">×</string>
     <string name="add_btn">+</string>
@@ -25,5 +25,6 @@
 
     <string name="backspace_btn">del</string>
     <string name="display_textView">Waiting for input to calculate</string>
+    <string name="contentDescription_backspacebutton">backspaceButton</string>
 
 </resources>
