@@ -3,6 +3,7 @@ package com.optimahorizonapps.calculatorapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
 
@@ -110,7 +111,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void parenthesesBtn(View v) {
+        int cursorPosition = display_et.getSelectionStart();
+        int openPar = 0;
+        int closedPar = 0;
+        int textLength = display_et.getText().length();
 
+        for(int i = 0; i < cursorPosition; i++) {
+            if (display_et.getText().toString().substring(i, i + 1).equals("(")) {
+                openPar += 1;
+            }
+            if (display_et.getText().toString().substring(i, i + 1).equals(")")) {
+                closedPar += 1;
+            }
+        }
+
+        if(openPar == closedPar || display_et.getText().toString().substring(textLength - 1, textLength).equals("(")) {
+            updateDisplay("(");
+        } else if(closedPar < openPar && display_et.getText().toString().substring(textLength - 1, textLength).equals("(")) {
+            updateDisplay(")");
+        }
+        display_et.setSelection(cursorPosition + 1);
     }
 
     public void clearBtn(View v) {
@@ -122,6 +142,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void backspaceBtn(View v) {
+        int cursorPosition = display_et.getSelectionStart();
+        int textLength = display_et.getText().length();
 
+        if(cursorPosition != 0 && textLength != 0) {
+            SpannableStringBuilder selection = (SpannableStringBuilder) display_et.getText();
+            selection.replace(cursorPosition - 1, cursorPosition, "");
+            display_et.setText(selection);
+            display_et.setSelection(cursorPosition - 1);
+        }
     }
 }
