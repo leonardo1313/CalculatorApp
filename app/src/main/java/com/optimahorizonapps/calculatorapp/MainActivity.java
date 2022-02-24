@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(openPar == closedPar || display_et.getText().toString().substring(textLength - 1, textLength).equals("(")) {
             updateDisplay("(");
-        } else if(closedPar < openPar && display_et.getText().toString().substring(textLength - 1, textLength).equals("(")) {
+        } else if(closedPar < openPar && !display_et.getText().toString().substring(textLength - 1, textLength).equals("(")) {
             updateDisplay(")");
         }
         display_et.setSelection(cursorPosition + 1);
