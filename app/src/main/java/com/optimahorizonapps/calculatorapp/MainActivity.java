@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
+import org.mariuszgromada.math.mxparser.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -138,7 +139,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equalsBtn(View v) {
+        String input = display_et.getText().toString();
 
+        input = input.replaceAll("÷", "/"); //formatting string for mxparser to be able to evaluate user input
+        input = input.replaceAll("×", "*");
+
+        Expression expression = new Expression(input);
+        String result = String.valueOf(expression.calculate());
+
+        display_et.setText(result);
+        display_et.setSelection(result.length());
     }
 
     public void backspaceBtn(View v) {
